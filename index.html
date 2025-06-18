@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="bg-[#000000]">
-    <div class="container grid gap-x-4 mx-auto text-[#1DCD9F]">
+    <div class="container justify-center grid gap-x-4 mx-auto text-[#1DCD9F]">
         <h1 class="text-xl drop-shadow font-bold">
             Yazdan Rasoulzadeh
         </h1>
         <p class="text-sm text-[#169976]">
             CS/BBA at UWaterloo & Laurier — I Build Tools
         </p>
-        <nav class="sticky top-0 z-10">
-            <a href="#About">About</a> |
-            <a href="#Projects">Projects</a> |
-            <a href="#Resumé">Resumé</a> |
-            <a href="#Contact">Contact</a>       
+        <nav class="sticky top-0 z-10 space-x-4 py-4">
+            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#About">About</a>
+            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Projects">Projects</a>
+            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Resumé">Resumé</a>
+            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Contact">Contact</a>
         </nav>
     </div>
   <div class="container flex justify-center items-center h-screen text-[#1DCD9F] space-x-6">
@@ -26,12 +26,15 @@
       <h3 class="text-xl font-bold">
           Hey 👋🏻 I am Yaz, a CS/BBA student building practical AI tools for real-world problems
       </h3>
-      <button>
-          Resumé
-      </button>
-      <button>
-          View Projects
-      </button>
   </div>
+    <div class="mt-4 flex justify-center space-x-4">
+        <a href="/resume.pdf" class="px-4 py-2 bg-[#1DCD9F] text-black font-semibold rounded hover:bg-[#169976] transition">
+            View Résumé
+        </a>
+        <a href="#Projects" class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition">
+            See Projects
+        </a>
+    </div>
+
   </body>
 </html>
