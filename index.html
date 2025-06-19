@@ -8,8 +8,13 @@
   </head>
   <body class="bg-[#222222]">
 
-    <div class="container justify-center grid gap-x-4 mx-auto text-[#1DCD9F]">
-        <nav class="sticky top-0 z-10 space-x-4 py-4">
+    <div class="container flex items-center md:justify-center sm:justify-between sticky top-0 z-10 justify-center gap-x-4 mx-auto text-[#1DCD9F] p-4">
+        <button id="menu-btn" class="md:hidden">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:rotate-90 hover:scale-125 size-6 transition duration-300 ease-in-out">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+</svg>
+        </button>
+        <nav id="menu" class="hidden md:flex space-x-4 py-4">
             <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#About">About</a>
             <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Projects">Projects</a>
             <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Resumé">Resumé</a>
@@ -28,7 +33,7 @@
           </h4>
           <div class="flex space-x-4 mt-4">
               <a href="/resume.pdf" class="px-4 py-2 bg-[#1DCD9F] text-black font-semibold rounded hover:bg-[#169976] transition">
-                  View Résumé
+                  View Resumé
               </a>
               <a href="#Projects" class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition">
                   See Projects
@@ -37,12 +42,62 @@
       </div>
   </div>
     <hr class="border-[#1DCD9F]">
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <div class="flex justify-center space-x-4">
+    </div>
+  <hr class="border-[#1DCD9F]">
+  <div class="flex flex-col justify-center items-center text-[#1DCD9F] p-6">
+      <section id="Projects" class="container mx-auto p-6 text-[#1DCD9F]">
+  <h3 class="text-3xl font-bold mb-8 text-center">Projects</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <div class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition">
+      <h4 class="text-xl font-semibold mb-2">Accounting AI Agent</h4>
+      <p class="mb-4 text-sm text-[#a0f0d1]">
+        Automates accounting workflows using Rasa, saving 5+ hours weekly.
+      </p>
+      <p class="mb-4 text-xs italic">Python, Rasa, Docker</p>
+      <div class="flex space-x-4">
+        <a href="https://github.com/yourusername/accounting-ai-agent" target="_blank" class="underline hover:text-[#169976]">GitHub</a>
+        <a href="https://demo.example.com" target="_blank" class="underline hover:text-[#169976]">Demo</a>
+      </div>
+    </div>
+    <div class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition">
+  <h4 class="text-xl font-semibold mb-2">Project Title</h4>
+  <p class="mb-4 text-sm text-[#a0f0d1]">
+    Short project description here.
+  </p>
+  <p class="mb-4 text-xs italic">Tech stack, separated by commas</p>
+  <div class="flex space-x-4">
+    <a href="https://github.com/yourusername/project-link" target="_blank" class="underline hover:text-[#169976]">GitHub</a>
+    <a href="https://demo.example.com" target="_blank" class="underline hover:text-[#169976]">Demo</a>
+  </div>
+</div>
+<div class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition">
+  <h4 class="text-xl font-semibold mb-2">Project Title</h4>
+  <p class="mb-4 text-sm text-[#a0f0d1]">
+    Short project description here.
+  </p>
+  <p class="mb-4 text-xs italic">Tech stack, separated by commas</p>
+  <div class="flex space-x-4">
+    <a href="https://github.com/yourusername/project-link" target="_blank" class="underline hover:text-[#169976]">GitHub</a>
+    <a href="https://demo.example.com" target="_blank" class="underline hover:text-[#169976]">Demo</a>
+  </div>
+</div>
+
+  </div>
+  </body>
+  <!-- Scripts -->
+   <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         ScrollReveal().reveal('p, h1, h2, h3, h4, li ', { distance: '20px', origin: 'bottom', duration: 600, easing: 'ease-in-out' });
     </script>
-    <div class="flex justify-center space-x-4">
-    </div>
+    <script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
 
-  </body>
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 </html>
