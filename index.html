@@ -5,99 +5,316 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tailwind App</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      :root {
+        --bg-color: #222222;
+        --text-color: #1DCD9F;
+        --accent-color: #169976;
+      }
+      html.light {
+        --bg-color: #F1E7E7;
+        --text-color: #B05070;
+        --accent-color: #FFD966;
+      }
+      html.dark {
+        --bg-color: #222222;
+        --text-color: #1DCD9F;
+        --accent-color: #169976;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      .text-primary {
+        color: var(--text-color);
+      }
+
+      .border-accent {
+        border-color: var(--accent-color);
+      }
+
+      .bg-accent {
+        background-color: var(--accent-color);
+      }
+
+      .hover-bg-accent:hover {
+        background-color: var(--accent-color);
+      }
+    </style>
   </head>
-  <body class="bg-[#222222]">
+  <body>
+    <div
+      class="container flex items-center md:justify-center justify-between sticky top-0 z-10 justify-center gap-x-4 mx-auto p-4 text-primary"
+    >
+      <button id="menu-btn" class="md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="hover:rotate-90 size-6 transition duration-300 ease-in-out"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+          />
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex space-x-4 py-4">
+        <a
+          class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+          href="#About"
+          >About</a
+        >
+        <a
+          class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+          href="#Projects"
+          >Projects</a
+        >
+        <a
+          class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+          href="#Resumé"
+          >Resumé</a
+        >
+        <a
+          class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+          href="#Contact"
+          >Contact</a
+        >
+      </nav>
+      <button id="theme-toggle" class="ml-auto relative w-6 h-6 overflow-hidden">
+        <!-- Sun icon -->
+        <svg
+          id="sun-icon"
+          class="absolute inset-0 w-6 h-6 transition-transform transition-opacity duration-300 ease-in-out opacity-0 -translate-y-4"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+          />
+        </svg>
 
-    <div class="container flex items-center md:justify-center sm:justify-between sticky top-0 z-10 justify-center gap-x-4 mx-auto text-[#1DCD9F] p-4">
-        <button id="menu-btn" class="md:hidden">
-         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:rotate-90 hover:scale-125 size-6 transition duration-300 ease-in-out">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-</svg>
-        </button>
-        <nav id="menu" class="hidden md:flex space-x-4 py-4">
-            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#About">About</a>
-            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Projects">Projects</a>
-            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Resumé">Resumé</a>
-            <a class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition" href="#Contact">Contact</a>
-        </nav>
+        <!-- Moon icon -->
+        <svg
+          id="moon-icon"
+          class="absolute inset-0 w-6 h-6 transition-transform transition-opacity duration-300 ease-in-out opacity-100 translate-y-0"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+          />
+        </svg>
+      </button>
     </div>
-    <hr class="border-[#1DCD9F]">
-  <div class="container flex justify-center items-center h-screen text-[#1DCD9F] space-x-6">
-      <img src="Hero%20Img.jpeg" class="rounded-full object-cover object-center" alt="A picture of the developer" />
+    <hr class="border-accent" />
+    <div
+      class="container flex justify-center items-center h-screen text-primary space-x-6"
+    >
+      <img
+        src="Hero%20Img.jpeg"
+        class="rounded-full object-cover object-center"
+        alt="A picture of the developer"
+      />
       <div class="flex flex-col justify-center items-center">
-      <h3 class="text-xl font-bold">
-            Hi I am Yaz 👋🏻 A CS & Business student at Uwaterloo & Laurier
-      </h3>
-          <h4 class="text-[#169976]">
-            Crafting intelligent solutions to real world problems with AI
-          </h4>
-          <div class="flex space-x-4 mt-4">
-              <a href="/resume.pdf" class="px-4 py-2 bg-[#1DCD9F] text-black font-semibold rounded hover:bg-[#169976] transition">
-                  View Resumé
-              </a>
-              <a href="#Projects" class="px-4 py-2 border-2 border-[#1DCD9F] text-[#1DCD9F] rounded hover:bg-[#1DCD9F] hover:text-black transition">
-                  See Projects
-              </a>
+        <h3 class="text-xl font-bold">
+          Hi I am Yaz 👋🏻 A CS & Business student at Uwaterloo & Laurier
+        </h3>
+        <h4 class="text-[var(--accent-color)]">
+          Crafting intelligent solutions to real world problems with AI
+        </h4>
+        <div class="flex space-x-4 mt-4">
+          <a
+            href="/resume.pdf"
+            class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition"
+            >View Resumé</a
+          >
+          <a
+            href="#Projects"
+            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+            >See Projects</a
+          >
+        </div>
+      </div>
+    </div>
+    <hr class="border-accent" />
+    <div class="flex justify-center space-x-4"></div>
+    <hr class="border-accent" />
+    <div class="flex flex-col justify-center items-center text-primary p-6">
+      <section id="Projects" class="container mx-auto p-6 text-primary">
+        <h3 class="text-3xl font-bold mb-8 text-center">Projects</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-2">Accounting AI Agent</h4>
+            <p class="mb-4 text-sm text-[var(--accent-color)]">
+              Automates accounting workflows using Rasa, saving 5+ hours weekly.
+            </p>
+            <p class="mb-4 text-xs italic">Python, Rasa, Docker</p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/yourusername/accounting-ai-agent"
+                target="_blank"
+                class="underline hover:text-[var(--accent-color)]"
+                >GitHub</a
+              >
+              <a
+                href="https://demo.example.com"
+                target="_blank"
+                class="underline hover:text-[var(--accent-color)]"
+                >Demo</a
+              >
+            </div>
           </div>
+          <div
+            class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-2">Project Title</h4>
+            <p class="mb-4 text-sm text-[var(--accent-color)]">
+              Short project description here.
+            </p>
+            <p class="mb-4 text-xs italic">Tech stack, separated by commas</p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/yourusername/project-link"
+                target="_blank"
+                class="underline hover:text-[var(--accent-color)]"
+                >GitHub</a
+              >
+              <a
+                href="https://demo.example.com"
+                target="_blank"
+                class="underline hover:text-[var(--accent-color)]"
+                >Demo</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-2">Project Title</h4>
+            <p class="mb-4 text-sm text-[var(--accent-color)]">
+              Short project description here.
+            </p>
+            <p class="mb-4 text-xs italic">Tech stack, separated by commas</p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/yourusername/project-link"
+                target="_blank"
+                class="underline hover:text-[var(--accent-color)]"
+                >GitHub</a
+              >
+              <a
+                href="https://demo.example.com"
+                target="_blank"
+                class="underline hover:text-[var(--accent-color)]"
+                >Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="border-accent" />
+      <div class="flex flex-col justify-center items-center text-primary p-6">
+        <section id="About">
+          <h3 class="text-3xl font-bold">
+            About Me
+          </h3>
+        </section>
       </div>
-  </div>
-    <hr class="border-[#1DCD9F]">
-    <div class="flex justify-center space-x-4">
     </div>
-  <hr class="border-[#1DCD9F]">
-  <div class="flex flex-col justify-center items-center text-[#1DCD9F] p-6">
-      <section id="Projects" class="container mx-auto p-6 text-[#1DCD9F]">
-  <h3 class="text-3xl font-bold mb-8 text-center">Projects</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-    <div class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition">
-      <h4 class="text-xl font-semibold mb-2">Accounting AI Agent</h4>
-      <p class="mb-4 text-sm text-[#a0f0d1]">
-        Automates accounting workflows using Rasa, saving 5+ hours weekly.
-      </p>
-      <p class="mb-4 text-xs italic">Python, Rasa, Docker</p>
-      <div class="flex space-x-4">
-        <a href="https://github.com/yourusername/accounting-ai-agent" target="_blank" class="underline hover:text-[#169976]">GitHub</a>
-        <a href="https://demo.example.com" target="_blank" class="underline hover:text-[#169976]">Demo</a>
-      </div>
-    </div>
-    <div class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition">
-  <h4 class="text-xl font-semibold mb-2">Project Title</h4>
-  <p class="mb-4 text-sm text-[#a0f0d1]">
-    Short project description here.
-  </p>
-  <p class="mb-4 text-xs italic">Tech stack, separated by commas</p>
-  <div class="flex space-x-4">
-    <a href="https://github.com/yourusername/project-link" target="_blank" class="underline hover:text-[#169976]">GitHub</a>
-    <a href="https://demo.example.com" target="_blank" class="underline hover:text-[#169976]">Demo</a>
-  </div>
-</div>
-<div class="bg-[#333333] p-6 rounded-lg shadow hover:shadow-lg transition">
-  <h4 class="text-xl font-semibold mb-2">Project Title</h4>
-  <p class="mb-4 text-sm text-[#a0f0d1]">
-    Short project description here.
-  </p>
-  <p class="mb-4 text-xs italic">Tech stack, separated by commas</p>
-  <div class="flex space-x-4">
-    <a href="https://github.com/yourusername/project-link" target="_blank" class="underline hover:text-[#169976]">GitHub</a>
-    <a href="https://demo.example.com" target="_blank" class="underline hover:text-[#169976]">Demo</a>
-  </div>
-</div>
-
-  </div>
-  </body>
-  <!-- Scripts -->
-   <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        ScrollReveal().reveal('p, h1, h2, h3, h4, li ', { distance: '20px', origin: 'bottom', duration: 600, easing: 'ease-in-out' });
+      ScrollReveal().reveal("p, h1, h2, h3, h4, li ", {
+        distance: "20px",
+        origin: "bottom",
+        duration: 600,
+        easing: "ease-in-out",
+      });
     </script>
     <script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
 
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+    <script>
+      const toggleBtn = document.getElementById("theme-toggle");
+      const sunIcon = document.getElementById("sun-icon");
+      const moonIcon = document.getElementById("moon-icon");
+      const html = document.documentElement;
 
+      const themeColors = {
+        light: {
+          bg: "#E5D7D7",
+          text: "#B05070",
+          accent: "#B38B33",
+        },
+        dark: {
+          bg: "#222222",
+          text: "#1DCD9F",
+          accent: "#169976",
+        },
+      };
+
+      function applyThemeColors(theme) {
+        const colors = themeColors[theme];
+        html.style.setProperty("--bg-color", colors.bg);
+        html.style.setProperty("--text-color", colors.text);
+        html.style.setProperty("--accent-color", colors.accent);
+      }
+
+      function toggleIcon(showIcon, hideIcon) {
+        showIcon.classList.remove("opacity-0", "-translate-y-4", "translate-y-4");
+        showIcon.classList.add("opacity-100", "translate-y-0");
+
+        hideIcon.classList.remove("opacity-100", "translate-y-0");
+        hideIcon.classList.add(
+          "opacity-0",
+          hideIcon === sunIcon ? "-translate-y-4" : "translate-y-4"
+        );
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        const isDark = html.classList.toggle("dark");
+        html.classList.toggle("light", !isDark);
+
+        if (isDark) {
+          toggleIcon(moonIcon, sunIcon);   
+          applyThemeColors("dark");
+        } else {
+          toggleIcon(sunIcon, moonIcon);
+          applyThemeColors("light");
+        }
+      });
+
+      // Initialize theme on load
+      applyThemeColors("light");
+      html.classList.add("light");
+      if (html.classList.contains('dark')) {
+  toggleIcon(moonIcon, sunIcon);
+} else {
+  toggleIcon(sunIcon, moonIcon);
+}
+    </script>
+  </body>
 </html>
