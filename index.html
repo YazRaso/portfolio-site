@@ -5,23 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yaz's Portfolio</title>
     <link rel="stylesheet" href="/style.css" />
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
     <style>
-      :root {
-        --bg-color: #222222;
-        --text-color: #1DCD9F;
-        --accent-color: #169976;
-      }
-      html.light {
-        --bg-color: #F1E7E7;
-        --text-color: #B05070;
-        --accent-color: #FFD966;
-      }
-      html.dark {
-        --bg-color: #222222;
-        --text-color: #1DCD9F;
-        --accent-color: #169976;
-      }
-
        html {
         scroll-behavior: smooth;
       }
@@ -70,7 +58,7 @@
   </head>
   <body>
     <div
-      class="container flex items-center md:justify-center justify-between sticky top-0 z-10 justify-center gap-x-4 mx-auto p-4 text-primary"
+      class="container flex items-center md:justify-center justify-between sticky top-0 z-10 justify-center gap-x-2 mx-auto p-4 text-primary"
     >
       <button id="menu-btn" class="md:hidden">
         <svg
@@ -88,7 +76,7 @@
           />
         </svg>
       </button>
-      <nav id="menu" class="hidden md:flex space-x-4 py-4">
+      <nav id="menu" class="hidden md:flex space-x-2 py-4">
         <a
           class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
           href="#About"
@@ -252,7 +240,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-[rgba(var(--bg-color),0.95)]">
+    <section class="py-20 bg-[rgba(var(--bg-color),0.95)]">
       <div class="container mx-auto px-4">
         <h2 class="text-2xl md:text-3xl font-bold mb-16 text-center section-title">Technical Skills</h2>
         
@@ -339,7 +327,7 @@
       </section>
        <!-- Projects Section -->
     </div>
-    <section id="projects" class="py-20">
+    <section id="Projects" class="py-20">
       <div class="border-t py-5 mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center section-title">Projects</h2>
         
@@ -515,7 +503,7 @@
       >Full Screen</a
     >
     <a
-      href="#Projects"
+      href="/resume.pdf"
       download="./resume.pdf"
       class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
       >Download</a
@@ -524,7 +512,7 @@
 </section> 
 </div>
   <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <section id="Contact" class="py-20">
       <div class="container mx-auto px-4 max-w-6xl">
         <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center section-title">Get In Touch</h2>
         
@@ -653,7 +641,7 @@
             
             <button
               type="submit"
-              class="w-full px-6 py-3 text-primary bg-[var(--accent-color)] text-black font-bold rounded-lg hover:bg-opacity-90 transition transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-opacity-50"
+              class="w-full px-6 py-3 bg-[var(--accent-color)] text-black font-bold rounded-lg hover:bg-opacity-90 transition transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-opacity-50"
             >
               Send Message
             </button>
@@ -675,11 +663,10 @@
           </div>
           
           <div class="flex space-x-6">
-            <a href="#about" class="text-sm hover:text-[var(--accent-color)] transition">About</a>
-            <a href="#skills" class="text-sm hover:text-[var(--accent-color)] transition">Skills</a>
-            <a href="#projects" class="text-sm hover:text-[var(--accent-color)] transition">Projects</a>
-            <a href="#resume" class="text-sm hover:text-[var(--accent-color)] transition">Resumé</a>
-            <a href="#contact" class="text-sm hover:text-[var(--accent-color)] transition">Contact</a>
+            <a href="#About" class="text-sm hover:text-[var(--accent-color)] transition">About</a>
+            <a href="#Projects" class="text-sm hover:text-[var(--accent-color)] transition">Projects</a>
+            <a href="#Resumé" class="text-sm hover:text-[var(--accent-color)] transition">Resumé</a>
+            <a href="#Contact" class="text-sm hover:text-[var(--accent-color)] transition">Contact</a>
           </div>
         </div>
         
@@ -715,14 +702,14 @@ const html = document.documentElement;
 
 const themeColors = {
   light: {
-    bg: "#E5D7D7",
-    text: "#B05070",
-    accent: "#B38B33",
+    bg: "#F8F9D7",
+    text: "#850F8D",
+    accent: "#FFB22C",
   },
   dark: {
     bg: "#222222",
-    text: "#1DCD9F",
-    accent: "#169976",
+    text: "#FFB22C",
+    accent: "#F564A9",
   },
 };
 
