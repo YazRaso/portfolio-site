@@ -98,6 +98,32 @@
           >Contact</a
         >
       </nav>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-[var(--bg-color)] border-b border-[var(--accent-color)] z-20">
+        <div class="flex flex-col space-y-2 p-4">
+          <a
+            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
+            href="#About"
+            >About</a
+          >
+          <a
+            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
+            href="#Projects"
+            >Projects</a
+          >
+          <a
+            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
+            href="#Resumé"
+            >Resumé</a
+          >
+          <a
+            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
+            href="#Contact"
+            >Contact</a
+          >
+        </div>
+      </div>
       <button id="theme-toggle" class="ml-auto relative w-6 h-6 overflow-hidden">
         <!-- Sun icon -->
         <svg
@@ -136,29 +162,31 @@
     </div>
     <hr class="border-accent" />
     <div
-      class="container flex justify-center items-center h-screen text-primary space-x-6"
+      class="container flex flex-col md:flex-row justify-center items-center min-h-screen text-primary space-y-6 md:space-y-0 md:space-x-6 px-4"
     >
       <img
         src="Hero%20Img.jpeg"
-        class="border-2 rounded-full object-cover object-center"
+        class="border-2 rounded-full object-cover object-center w-48 h-48 md:w-64 md:h-64"
         alt="A picture of the developer"
       />
-      <div class="flex flex-col justify-center items-center">
-        <h3 class="text-xl font-bold">
+      <div class="flex flex-col justify-center items-center text-center">
+        <h3 class="text-lg md:text-xl font-bold mb-2">
           Hi I am Yaz 👋🏻 A CS & Business student at Uwaterloo & Laurier
         </h3>
-        <h4 class="text-[var(--accent-color)]">
+        <h4 class="text-[var(--accent-color)] text-sm md:text-base mb-4">
           Crafting intelligent solutions to real world problems with AI
         </h4>
-        <div class="flex space-x-4 mt-4">
+        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
           <a
-            href="/resume.pdf"
-            class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition"
+            href="./resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition text-center"
             >View Resumé</a
           >
           <a
             href="#Projects"
-            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+            class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
             >See Projects</a
           >
         </div>
@@ -166,71 +194,71 @@
     </div>
     
       <section id="About">
-      <div class="border-t flex flex-col justify-center items-center text-primary p-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center section-title">About Me</h2>
+      <div class="border-t flex flex-col justify-center items-center text-primary p-4 md:p-6">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-16 text-center section-title">About Me</h2>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-2xl font-bold mb-4">My Journey</h3>
-            <p class="mb-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-xl md:text-2xl font-bold mb-4">My Journey</h3>
+            <p class="mb-4 text-sm md:text-base">
               As a dual-degree student in Computer Science and Business Administration at University of Waterloo and Wilfrid Laurier University, I've developed a unique blend of technical expertise and strategic thinking. My passion lies at the intersection of AI innovation and practical business applications.
             </p>
-            <p class="mb-6">
+            <p class="mb-6 text-sm md:text-base">
               I specialize in creating intelligent systems that solve real-world problems, focusing on efficiency, scalability, and user experience. My approach combines cutting-edge technology with business acumen to deliver impactful solutions, from AI-powered automation to secure authentication systems.
             </p>
             
-            <div class="flex items-center space-x-4">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
               <div class="flex items-center space-x-2">
                 <div class="w-2 h-2 rounded-full bg-[var(--accent-color)]"></div>
-                <span>AI Development</span>
+                <span class="text-sm md:text-base">AI Development</span>
               </div>
               <div class="flex items-center space-x-2">
                 <div class="w-2 h-2 rounded-full bg-[var(--accent-color)]"></div>
-                <span>Full-Stack Development</span>
+                <span class="text-sm md:text-base">Full-Stack Development</span>
               </div>
               <div class="flex items-center space-x-2">
                 <div class="w-2 h-2 rounded-full bg-[var(--accent-color)]"></div>
-                <span>Systems Design</span>
+                <span class="text-sm md:text-base">Systems Design</span>
               </div>
             </div>
             </div>
           
-          <div class="grid grid-cols-2 gap-4">
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-4">
-                <i class="fas fa-graduation-cap text-[var(--accent-color)] text-xl"></i>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="glass-card p-4 md:p-6 rounded-2xl">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-3 md:mb-4">
+                <i class="fas fa-graduation-cap text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
-              <h3 class="font-bold text-lg mb-2">Education</h3>
-              <p class="text-sm">
+              <h3 class="font-bold text-base md:text-lg mb-2">Education</h3>
+              <p class="text-xs md:text-sm">
                 Dual degree in Computer Science & Business at University of Waterloo and Wilfrid Laurier University
               </p>
             </div>
             
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-4">
-                <i class="fas fa-bolt text-[var(--accent-color)] text-xl"></i>
+            <div class="glass-card p-4 md:p-6 rounded-2xl">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-3 md:mb-4">
+                <i class="fas fa-bolt text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
-              <h3 class="font-bold text-lg mb-2">Specialization</h3>
-              <p class="text-sm">
+              <h3 class="font-bold text-base md:text-lg mb-2">Specialization</h3>
+              <p class="text-xs md:text-sm">
                 AI-powered automation, machine learning models, and full-stack development with focus on security and scalability
               </p>
             </div>
             
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-4">
-                <i class="fas fa-rocket text-[var(--accent-color)] text-xl"></i>
+            <div class="glass-card p-4 md:p-6 rounded-2xl">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-3 md:mb-4">
+                <i class="fas fa-rocket text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
-              <h3 class="font-bold text-lg mb-2">Approach</h3>
-              <p class="text-sm">
+              <h3 class="font-bold text-base md:text-lg mb-2">Approach</h3>
+              <p class="text-xs md:text-sm">
                 Combining technical innovation with business strategy to create impactful solutions
               </p>
             </div>
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-4">
-                <i class="fas fa-lightbulb text-[var(--accent-color)] text-xl"></i>
+            <div class="glass-card p-4 md:p-6 rounded-2xl">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center mb-3 md:mb-4">
+                <i class="fas fa-lightbulb text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
-              <h3 class="font-bold text-lg mb-2">Vision</h3>
-              <p class="text-sm">
+              <h3 class="font-bold text-base md:text-lg mb-2">Vision</h3>
+              <p class="text-xs md:text-sm">
                 Creating innovative solutions with code, from hackathon-winning smart systems to production-ready applications
               </p>
             </div>
@@ -240,13 +268,13 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="py-20 bg-[rgba(var(--bg-color),0.95)]">
+    <section class="py-12 md:py-20 bg-[rgba(var(--bg-color),0.95)]">
       <div class="container mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold mb-16 text-center section-title">Technical Skills</h2>
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-8 md:mb-16 text-center section-title">Technical Skills</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-lg md:text-xl font-bold mb-4 flex items-center">
               <i class="fas fa-brain text-[var(--accent-color)] mr-3"></i> AI & ML
             </h3>
             <div class="tech-stack">
@@ -255,8 +283,8 @@
               <span class="tech-item">Rasa</span>
             </div>
           </div>
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-lg md:text-xl font-bold mb-4 flex items-center">
               <i class="fas fa-code text-[var(--accent-color)] mr-3"></i> Development
             </h3>
             <div class="tech-stack">
@@ -269,8 +297,8 @@
             </div>
           </div>
           
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-lg md:text-xl font-bold mb-4 flex items-center">
               <i class="fas fa-database text-[var(--accent-color)] mr-3"></i> Data & Cloud
             </h3>
             <div class="tech-stack">
@@ -283,8 +311,8 @@
             </div>
           </div>
           
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-lg md:text-xl font-bold mb-4 flex items-center">
               <i class="fas fa-chart-line text-[var(--accent-color)] mr-3"></i> Analytics & Visualization
             </h3>
             <div class="tech-stack">
@@ -296,8 +324,8 @@
             </div>
           </div>
           
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-lg md:text-xl font-bold mb-4 flex items-center">
               <i class="fas fa-cogs text-[var(--accent-color)] mr-3"></i> Tools & DevOps
             </h3>
             <div class="tech-stack">
@@ -309,8 +337,8 @@
             </div>
           </div>
           
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold mb-4 flex items-center">
+          <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="text-lg md:text-xl font-bold mb-4 flex items-center">
               <i class="fas fa-briefcase text-[var(--accent-color)] mr-3"></i> Business
             </h3>
             <div class="tech-stack">
@@ -324,26 +352,26 @@
       </section>
        <!-- Projects Section -->
     </div>
-    <section id="Projects" class="py-20">
+    <section id="Projects" class="py-12 md:py-20">
       <div class="border-t py-5 mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center section-title">Projects</h2>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-16 text-center section-title">Projects</h2>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="project-card glass-card p-8 rounded-2xl">
-            <div class="flex justify-between items-start mb-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          <div class="project-card glass-card p-6 md:p-8 rounded-2xl">
+            <div class="flex justify-between items-start mb-4 md:mb-6">
               <div>
-                <h3 class="text-2xl font-bold mb-2">Calcite</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">Calcite</h3>
                 <div class="flex items-center text-[var(--accent-color)]">
                   <i class="fas fa-star mr-2"></i>
-                  <span>Featured Project</span>
+                  <span class="text-sm md:text-base">Featured Project</span>
                 </div>
               </div>
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
-                <i class="fas fa-robot text-[var(--accent-color)]"></i>
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
+                <i class="fas fa-robot text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
             </div>
             
-            <p class="mb-6">
+            <p class="mb-4 md:mb-6 text-sm md:text-base">
               Engineered an AI agent with Rasa fully automating manual accounting workflows, saving users 5+ hours weekly. Designed a cross-platform desktop application with a polished Qt(Pyside6) front-end and a containerized backend, enabling a smooth user experience while streamlining deployment.
             </p>
             
@@ -362,21 +390,21 @@
             </div>
           </div>
           
-          <div class="project-card glass-card p-8 rounded-2xl">
-            <div class="flex justify-between items-start mb-6">
+          <div class="project-card glass-card p-6 md:p-8 rounded-2xl">
+            <div class="flex justify-between items-start mb-4 md:mb-6">
               <div>
-                <h3 class="text-2xl font-bold mb-2">Centsi</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">Centsi</h3>
                 <div class="flex items-center text-[var(--accent-color)]">
                   <i class="fas fa-chart-line mr-2"></i>
-                  <span>Risk Prediction</span>
+                  <span class="text-sm md:text-base">Risk Prediction</span>
                 </div>
               </div>
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
-                <i class="fas fa-chart-pie text-[var(--accent-color)]"></i>
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
+                <i class="fas fa-chart-pie text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
             </div>
             
-            <p class="mb-6">
+            <p class="mb-4 md:mb-6 text-sm md:text-base">
               Built an XGBoost model to predict payment default risk, achieving 85% accuracy on test data using advanced feature engineering. Integrated NLP-based market sentiment analysis leveraging Google Gemini API, improving prediction coverage.
             </p>
             
@@ -398,21 +426,21 @@
             </div>
           </div>
           
-          <div class="project-card glass-card p-8 rounded-2xl">
-            <div class="flex justify-between items-start mb-6">
+          <div class="project-card glass-card p-6 md:p-8 rounded-2xl">
+            <div class="flex justify-between items-start mb-4 md:mb-6">
               <div>
-                <h3 class="text-2xl font-bold mb-2">RustAuth</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">RustAuth</h3>
                 <div class="flex items-center text-[var(--accent-color)]">
                   <i class="fas fa-shield-alt mr-2"></i>
-                  <span>Authentication Service</span>
+                  <span class="text-sm md:text-base">Authentication Service</span>
                 </div>
               </div>
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
-                <i class="fas fa-lock text-[var(--accent-color)]"></i>
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
+                <i class="fas fa-lock text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
             </div>
             
-            <p class="mb-6">
+            <p class="mb-4 md:mb-6 text-sm md:text-base">
               Built a user authentication microservice in Rust, ensuring a secure and fast system. Designed a REST API with protected routes using Axum, enabling CORS support. Implemented a relational database to store usernames and hashed passwords using PostgreSQL.
             </p>
             
@@ -431,21 +459,21 @@
             </div>
           </div>
           
-          <div class="project-card glass-card p-8 rounded-2xl">
-            <div class="flex justify-between items-start mb-6">
+          <div class="project-card glass-card p-6 md:p-8 rounded-2xl">
+            <div class="flex justify-between items-start mb-4 md:mb-6">
               <div>
-                <h3 class="text-2xl font-bold mb-2">Battle Over Bins</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">Battle Over Bins</h3>
                 <div class="flex items-center text-[var(--accent-color)]">
                   <i class="fas fa-trophy mr-2"></i>
-                  <span>Hackathon Winner</span>
+                  <span class="text-sm md:text-base">Hackathon Winner</span>
                 </div>
               </div>
-              <div class="w-12 h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
-                <i class="fas fa-recycle text-[var(--accent-color)]"></i>
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(var(--accent-color),0.15)] flex items-center justify-center">
+                <i class="fas fa-recycle text-[var(--accent-color)] text-lg md:text-xl"></i>
               </div>
             </div>
             
-            <p class="mb-6">
+            <p class="mb-4 md:mb-6 text-sm md:text-base">
               Led a cross-functional team in designing and delivering BOB, an innovative smart recycling bin that scans product barcodes to assess recyclability and provide real-time disposal guidance. Directed hardware-software integration efforts involving Arduino sensors, Streamlit frontend, and Google Gemini AI API.
             </p>
             
@@ -471,41 +499,47 @@
     </section>
     </div>
   </div>
-    <div class="border-t mx-auto px-6 flex flex-col items-center text-primary p-6 gap-8">
+    <div class="border-t mx-auto px-4 md:px-6 flex flex-col items-center text-primary p-4 md:p-6 gap-6 md:gap-8">
   <!-- Text Content -->
   <div class="w-full max-w-4xl">
     <section id=Resumé>
-    <h3 class="text-3xl font-bold mb-4 py-4 text-center">Resumé</h3>
-    <p class="text-lg leading-relaxed text-center">
+    <h3 class="text-2xl md:text-3xl font-bold mb-4 py-4 text-center">Resumé</h3>
+    <p class="text-base md:text-lg leading-relaxed text-center">
       Quick snapshot of my skills and experience. Download the full PDF for details on projects, tools, and roles I’ve worked toward in software, AI, and systems.
     </p>
   </div>
 
   <!-- Resume Embed -->
-  <div class="w-full max-w-4xl h-[600px] mx-auto">
-    <embed src="/resume.pdf" type="application/pdf" class="w-full h-full rounded-xl shadow max-w-full" />
+  <div class="w-full max-w-4xl h-[400px] md:h-[600px] mx-auto bg-gray-100 rounded-xl flex items-center justify-center">
+    <div class="text-center">
+      <i class="fas fa-file-pdf text-6xl text-gray-400 mb-4"></i>
+      <p class="text-gray-600 mb-4">PDF Preview</p>
+      <p class="text-sm text-gray-500">Click the buttons below to view or download the resume</p>
+    </div>
   </div>
 
   <!-- Buttons -->
-  <div class="flex justify-center space-x-4 mt-4">
+  <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
     <a
-      href="/resume.pdf"
-      class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition"
-      >Full Screen</a
+      href="./resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition text-center"
+      >Open PDF</a
     >
     <a
-      href="/resume.pdf"
-      download="./resume.pdf"
-      class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition"
+      href="./resume.pdf"
+      download="Yaz_Rasoulzadeh_Resume.pdf"
+      class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
       >Download</a
     >
   </div>
 </section> 
 </div>
   <!-- Contact Section -->
-    <section id="Contact" class="py-20">
+    <section id="Contact" class="py-12 md:py-20">
       <div class="container mx-auto px-4 max-w-6xl">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center section-title">Get In Touch</h2>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-16 text-center section-title">Get In Touch</h2>
         
         <div class="flex flex-col lg:flex-row items-start justify-between gap-12">
           <div class="lg:w-2/5 space-y-8">
@@ -673,10 +707,18 @@
     </script>
     <script>
       const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
+      const mobileMenu = document.getElementById("mobile-menu");
 
       btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("hidden");
+      });
+      
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
       });
     </script>
     <script>
