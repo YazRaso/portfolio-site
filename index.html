@@ -54,7 +54,7 @@
       }
 
     </style>
-    <link rel="stylesheet" crossorigin href="/portfolio-site/assets/index-Bk4irKtM.css">
+    <link rel="stylesheet" crossorigin href="/portfolio-site/assets/index-JNi_Ctb9.css">
   </head>
   <body>
     <div
@@ -177,12 +177,10 @@
           Crafting intelligent solutions to real world problems with AI
         </h4>
         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-          <a
-            href="https://yazraso.github.io/Portfolio-Site/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition text-center"
-            >View Resumé</a
+          <button
+            onclick="openPDF()"
+            class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition text-center cursor-pointer"
+            >View Resumé</button
           >
           <a
             href="#Projects"
@@ -520,18 +518,15 @@
 
   <!-- Buttons -->
   <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
-    <a
-      href="https://yazraso.github.io/Portfolio-Site/resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition text-center"
-      >Open PDF</a
+    <button
+      onclick="openPDF()"
+      class="px-4 py-2 bg-accent text-black font-semibold rounded hover-bg-accent transition text-center cursor-pointer"
+      >Open PDF</button
     >
-    <a
-      href="https://yazraso.github.io/Portfolio-Site/resume.pdf"
-      download="https://yazraso.github.io/Portfolio-Site/resume.pdf"
-      class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center"
-      >Download</a
+    <button
+      onclick="downloadPDF()"
+      class="px-4 py-2 border-2 border-accent text-primary rounded hover-bg-accent hover:text-black transition text-center cursor-pointer"
+      >Download</button
     >
   </div>
 </section> 
@@ -720,6 +715,26 @@
           mobileMenu.classList.add("hidden");
         });
       });
+
+      // PDF functions
+      function openPDF() {
+        const link = document.createElement('a');
+        link.href = 'https://yazraso.github.io/Portfolio-Site/resume.pdf';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      function downloadPDF() {
+        const link = document.createElement('a');
+        link.href = 'https://yazraso.github.io/Portfolio-Site/resume.pdf';
+        link.download = 'Yaz_Rasoulzadeh_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
     </script>
     <script>
 const toggleBtn = document.getElementById("theme-toggle");
