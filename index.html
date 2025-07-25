@@ -53,28 +53,45 @@
         transform: translateY(-4px);
       }
 
+      .hamburger {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.3rem;
+        cursor: pointer;
+        z-index: 30;
+      }
+      .hamburger-bar {
+        height: 3px;
+        width: 100%;
+        background: currentColor;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      }
+      #menu-btn.open .bar1 {
+        transform: translateY(9px) rotate(45deg);
+      }
+      #menu-btn.open .bar2 {
+        opacity: 0;
+      }
+      #menu-btn.open .bar3 {
+        transform: translateY(-9px) rotate(-45deg);
+      }
     </style>
-    <link rel="stylesheet" crossorigin href="/portfolio-site/assets/index-LiuYtlrw.css">
+    <link rel="stylesheet" crossorigin href="/portfolio-site/assets/index-BtCtc5LY.css">
   </head>
   <body>
     <div
       class="container flex items-center md:justify-center justify-between sticky top-0 z-10 justify-center gap-x-2 mx-auto p-4 text-primary"
     >
       <button id="menu-btn" class="md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="hover:rotate-90 size-6 transition duration-300 ease-in-out"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-          />
-        </svg>
+        <span class="hamburger">
+          <span class="hamburger-bar bar1"></span>
+          <span class="hamburger-bar bar2"></span>
+          <span class="hamburger-bar bar3"></span>
+        </span>
       </button>
       <nav id="menu" class="hidden md:flex space-x-2 py-4">
         <a
@@ -704,6 +721,7 @@
 
       btn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
+        btn.classList.toggle("open");
       });
       
       // Close mobile menu when clicking on a link
